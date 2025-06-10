@@ -1,54 +1,189 @@
-# React + TypeScript + Vite
+# 🌤️ Weather TypeScript App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive weather application built with TypeScript and Vite, providing real-time weather information using the OpenWeather API.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌡️ Real-time weather data
+- 🔍 Search weather by city name
+- 📱 Responsive design for all devices
+- ⚡ Fast and lightweight with Vite
+- 🎨 Modern UI/UX design
+- 🌍 Global weather coverage
+- 📊 Detailed weather metrics
 
-## Expanding the ESLint configuration
+## 🚀 Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (v16 or higher)
+- npm or yarn package manager
+- OpenWeather API key
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/Abdullah001butt/weather-ts.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. **Navigate to project directory**
+```bash
+cd weather-ts
 ```
+
+3. **Install dependencies**
+```bash
+npm install
+```
+
+4. **Environment Setup**
+   
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_OPENWEATHER_API_KEY=your_api_key_here
+   ```
+   
+   > 🔑 Get your free API key from [OpenWeather](https://openweathermap.org/api)
+
+5. **Start development server**
+```bash
+npm run dev
+```
+
+## 🛠️ Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+| `npm run type-check` | Run TypeScript compiler check |
+
+## 🏗️ Tech Stack
+
+- **Frontend Framework**: Vite + TypeScript
+- **Styling**: CSS3 / SCSS (or your preferred styling solution)
+- **API**: OpenWeather API
+- **Build Tool**: Vite
+- **Package Manager**: npm
+
+## 📁 Project Structure
+
+```
+weather-ts/
+├── public/
+│   ├── favicon.ico
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── WeatherCard/
+│   │   ├── SearchBar/
+│   │   └── LoadingSpinner/
+│   ├── services/
+│   │   └── weatherApi.ts
+│   ├── types/
+│   │   └── weather.ts
+│   ├── utils/
+│   ├── styles/
+│   ├── App.tsx
+│   └── main.tsx
+├── .env
+├── .gitignore
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+## 🌐 API Integration
+
+This application uses the OpenWeather API to fetch weather data. The API provides:
+
+- Current weather conditions
+- Temperature, humidity, and pressure
+- Wind speed and direction
+- Weather descriptions and icons
+- Sunrise and sunset times
+
+### API Endpoints Used
+
+- **Current Weather**: `https://api.openweathermap.org/data/2.5/weather`
+- **5-Day Forecast**: `https://api.openweathermap.org/data/2.5/forecast`
+
+## 🚀 Deployment
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Deploy to Vercel
+
+```bash
+npm install -g vercel
+vercel --prod
+```
+
+### Deploy to Netlify
+
+```bash
+npm run build
+# Upload dist/ folder to Netlify
+```
+
+### Environment Variables for Production
+
+Make sure to set the following environment variable in your deployment platform:
+
+```
+VITE_OPENWEATHER_API_KEY=your_production_api_key
+```
+
+## 🔧 Configuration
+
+### Vite Configuration
+
+The project uses Vite for fast development and optimized builds. Configuration can be found in `vite.config.ts`.
+
+### TypeScript Configuration
+
+TypeScript settings are configured in `tsconfig.json` for strict type checking and modern JavaScript features.
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
+
+
+## 👨‍💻 Author
+
+**Abdullah Butt**
+- GitHub: [@Abdullah001butt](https://github.com/Abdullah001butt)
+
+## 🙏 Acknowledgments
+
+- [OpenWeather](https://openweathermap.org/) for providing the weather API
+- [Vite](https://vitejs.dev/) for the amazing build tool
+- [TypeScript](https://www.typescriptlang.org/) for type safety
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by Abdullah Butt</p>
+  <p>⭐ Star this repo if you found it helpful!</p>
+</div>
