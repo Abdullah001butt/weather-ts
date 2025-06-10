@@ -2,6 +2,10 @@
 
 A modern, responsive weather application built with TypeScript and Vite, providing real-time weather information using the OpenWeather API.
 
+
+![screenshot-weather](https://github.com/user-attachments/assets/92dcbd86-4138-4b7b-8bc8-8fd5ec0d7101)
+
+
 ## ✨ Features
 
 - 🌡️ Real-time weather data
